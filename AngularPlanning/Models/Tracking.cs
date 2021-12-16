@@ -7,5 +7,9 @@ namespace AngularPlanning.Models
 {
     public class Tracking
     {
+        public int TrackingID { get; set; }
+        public int EventID { get; set; }
+        public int EventTicketsSold { get; set; }
+        public int EventFavorites { get; set; }
     }
 }

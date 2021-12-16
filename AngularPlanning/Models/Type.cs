@@ -7,5 +7,7 @@ namespace AngularPlanning.Models
 {
     public class Type
     {
+        public int TypeID { get; set; }
+        public string EventType { get; set; }
     }
 }
