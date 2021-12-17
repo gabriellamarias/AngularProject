@@ -41,6 +41,13 @@ namespace AngularPlanning
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(option =>
+            {
+                option.AllowAnyOrigin();
+                option.AllowAnyHeader();
+                option.AllowAnyMethod();
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
