@@ -1,10 +1,11 @@
-export class Event{
-	constructor(
-	public id: Number,
-	public eventName: String,
-	public eventType: String,
-	public eventDate: Number,
-	public eventDescription: String,
-	public eventLocation: String,
-	){ }
+export class EventPreview {
+    id: Number;
+    name: String;
+    type: Number;
+
+    constructor(id: Number, name: String, type: Number) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+    }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventApiService } from '../services/event-api-service';
+import { Event } from '../models/event';
 
 @Component({
   selector: 'app-all-event-list',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllEventListComponent implements OnInit {
 
-  constructor() { }
+  events: Event[] = [];
+
+  constructor(
+    private eventAPIsvc: EventApiService
+  ) { }
 
   ngOnInit(): void {
+    this.addDefaultEvents();
+  }
+
+  addDefaultEvents() {
+    this.eventAPIsvc.getEvent().subscribe((events) => {
+      console.log("[INFO]")
+      console.log(events)
+      this.events = events;
+    })
   }
 
 }
