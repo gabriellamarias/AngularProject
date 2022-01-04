@@ -13,10 +13,12 @@ export class EventApiService {
         private httpClient: HttpClient
     ) { }
 
-    getEvent(): Observable<Event[]> {
+    getEvents(): Observable<Event[]> {
         return this.httpClient.get<Event[]>("https://localhost:44321/event")
     }
 
-
+    getEvent(id: Number): Observable<Event> {
+        return this.httpClient.get<Event>(`https://localhost:44321/event/details?id=${id}`)
+    }
 
 }

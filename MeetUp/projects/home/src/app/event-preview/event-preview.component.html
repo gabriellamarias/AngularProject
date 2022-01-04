@@ -3,9 +3,10 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{content.eventName}}</h5>
-          <p class="card-text">{{content.type}}</p>
+          <p class="card-text">{{content.eventDescription}}</p>
           <a href= "{{ linkToEvent }}" class="btn btn-dark">Open Event</a>
-          <p class="card-text"><small class="text-muted">{{content.location}}</small></p>
+          <!-- <input type="button" value="Call Function" (click)="getSelectedEvent()"> -->
+          <p class="card-text"><small class="text-muted">{{content.eventID}}</small></p>
         </div>
       </div>
     </div>

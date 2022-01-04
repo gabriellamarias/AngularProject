@@ -30,6 +30,7 @@
               "projects/home/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/home/src/styles.css"
             ],
             "scripts": []
@@ -97,6 +98,7 @@
               "projects/home/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/home/src/styles.css"
             ],
             "scripts": []

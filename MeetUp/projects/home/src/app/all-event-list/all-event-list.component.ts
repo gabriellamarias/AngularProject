@@ -20,7 +20,7 @@ export class AllEventListComponent implements OnInit {
   }
 
   addDefaultEvents() {
-    this.eventAPIsvc.getEvent().subscribe((events) => {
+    this.eventAPIsvc.getEvents().subscribe((events) => {
       console.log("[INFO]")
       console.log(events)
       this.events = events;

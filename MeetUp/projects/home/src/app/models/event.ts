@@ -1,6 +1,14 @@
 export class Event{
+	// eventName: string;
+
+	// constructor(
+	// 	eventName?: string
+	// ){
+	// 	this.eventName = eventName;
+	// }
+
 	constructor(
-	public eventId: Number,
+	public eventID: Number,
 	public eventName: String,
 	public type: Number,
 	public eventDate: Number,
