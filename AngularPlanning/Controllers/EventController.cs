@@ -31,7 +31,61 @@ namespace AngularPlanning.Controllers
             return result;
         }
 
+        //public async Task<IActionResult> Search(string option, string search)
+        //{
+        //    if (option == "Title")
+        //    {
+        //        return View(_context.Movie.Where(m => m.Title == search || search == null).ToList());
+        //    }
+        //    else
+        //    {
+        //        return View(_context.Movie.Where(m => m.Genre == search || search == null).ToList());
+        //    }
+        //}
+
         [HttpGet]
+        [Route("Details")]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var selectEvent = await _context.Event
+                .FirstOrDefaultAsync(m => m.EventID == id);
+            if (selectEvent == null)
+            {
+                return NotFound();
+            }
+
+            var result = new OkObjectResult(selectEvent);
+            return (result);
+        }
+
+            //[HttpGet]
+            //[Route("ViewEvents")]
+            //public async Task<IActionResult> ListEventView()
+            //{
+            //    var view = new List<EventView>();
+            //    var events = await _context.Event.ToListAsync();
+
+            //    foreach (Event e in events)
+            //    {
+            //        var eventview = new EventView();
+            //        eventview.EventNameView = e.EventName.ToString();
+            //        eventview.TypeView = e.Type.ToString();
+            //        eventview.EventDescription = e.EventDescription.ToString();
+            //        eventview.EventPrice = e.EventPrice.ToString();
+            //        eventview.EventDate = e.EventDate.ToString();
+
+            //        view.Add(eventview);
+            //    }
+            //    var result = new OkObjectResult(view);
+            //    return result;
+            //}
+
+            [HttpGet]
         [Route("ViewLocations")]
         public async Task<IActionResult> ViewLocations()
         {
