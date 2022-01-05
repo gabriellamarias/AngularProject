@@ -10,7 +10,7 @@ using AngularPlanning.Models;
 
 namespace AngularPlanning.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EventController : Controller
     {
@@ -30,18 +30,6 @@ namespace AngularPlanning.Controllers
 
             return result;
         }
-
-        //public async Task<IActionResult> Search(string option, string search)
-        //{
-        //    if (option == "Title")
-        //    {
-        //        return View(_context.Movie.Where(m => m.Title == search || search == null).ToList());
-        //    }
-        //    else
-        //    {
-        //        return View(_context.Movie.Where(m => m.Genre == search || search == null).ToList());
-        //    }
-        //}
 
         [HttpGet]
         [Route("Details")]
@@ -63,72 +51,17 @@ namespace AngularPlanning.Controllers
             return (result);
         }
 
-            //[HttpGet]
-            //[Route("ViewEvents")]
-            //public async Task<IActionResult> ListEventView()
-            //{
-            //    var view = new List<EventView>();
-            //    var events = await _context.Event.ToListAsync();
-
-            //    foreach (Event e in events)
-            //    {
-            //        var eventview = new EventView();
-            //        eventview.EventNameView = e.EventName.ToString();
-            //        eventview.TypeView = e.Type.ToString();
-            //        eventview.EventDescription = e.EventDescription.ToString();
-            //        eventview.EventPrice = e.EventPrice.ToString();
-            //        eventview.EventDate = e.EventDate.ToString();
-
-            //        view.Add(eventview);
-            //    }
-            //    var result = new OkObjectResult(view);
-            //    return result;
-            //}
-
-            [HttpGet]
-        [Route("ViewLocations")]
-        public async Task<IActionResult> ViewLocations()
-        {
-            var locations = await _context.Location.ToListAsync();
-
-            var result = new OkObjectResult(locations);
-
-            return result;
-        }
-
-        [HttpGet]
-        [Route("ViewTypes")]
-        public async Task<IActionResult> ViewTypes()
-        {
-            var types = await _context.Type.ToListAsync();
-
-            var result = new OkObjectResult(types);
-
-            return result;
-        }
-
-        [HttpGet]
-        [Route("ViewTracking")]
-        public async Task<IActionResult> ViewTracking()
-        {
-            var tracking = await _context.Tracking.ToListAsync();
-
-            var result = new OkObjectResult(tracking);
-
-            return result;
-        }
-
         [HttpPost]
         [Route("CreateEvent")]
-        public async Task<IActionResult> CreateEvent([Bind("EventID,EventName,Type,EventDescription,EventPrice,EventDate,Location")] CreateEventRequest request)
+        public async Task<IActionResult> CreateEvent([Bind("eventID,eventName,type,eventDescription,eventPrice,eventDate,location")] CreateEventRequest request)
         {
             var whatever = new Event();
-            whatever.EventName = request.EventName;
-            whatever.Type = request.Type;
-            whatever.EventDescription = request.EventDescription;
-            whatever.EventPrice = request.EventPrice;
-            whatever.EventDate = request.EventDate;
-            whatever.Location = request.Location;
+            whatever.EventName = request.eventName;
+            whatever.EventDescription = request.eventDescription;
+            whatever.Type = request.type;
+            whatever.EventPrice = Decimal.Parse(request.eventPrice);
+            whatever.EventDate = DateTime.Parse(request.eventDate);
+            whatever.Location = request.location;
             whatever.UserAdded = true;
 
             await _context.AddAsync(whatever);
@@ -137,7 +70,45 @@ namespace AngularPlanning.Controllers
             var result = new OkObjectResult(whatever);
             return result;
         }
-          
+
+        [HttpDelete]
+        [Route("Delete")]
+        public async Task<ActionResult<Location>> DeleteEvent(int id)
+        {
+            var selectEvent = await _context.Event
+                .FirstOrDefaultAsync(m => m.EventID == id);
+
+            if (selectEvent == null)
+            {
+                return NotFound();
+            }
+
+            _context.Event.Remove(selectEvent);
+            await _context.SaveChangesAsync();
+
+            var result = new OkObjectResult(selectEvent);
+            return (result);
+        }
+
+        [HttpPatch]
+        [Route("EditEvent")]
+        public async Task<IActionResult> EditEvent(int ID, [Bind("eventID,eventName,type,eventDescription,eventPrice,eventDate,location")] CreateEventRequest update)
+        {
+            var selectEvent = await _context.Event
+            .FirstOrDefaultAsync(m => m.EventID == ID);
+            selectEvent.EventName = update.eventName;
+            selectEvent.EventDescription = update.eventDescription;
+            selectEvent.Type = update.type;
+            selectEvent.EventPrice = Decimal.Parse(update.eventPrice);
+            selectEvent.EventDate = DateTime.Parse(update.eventDate);
+            selectEvent.Location = update.location;
+
+            await _context.SaveChangesAsync();
+
+            var result = new OkObjectResult(selectEvent);
+            return result;
+        }
+
     }
         
 }

@@ -139,11 +139,6 @@ C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\AngularPlanning.TagHelpers.input.cache
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\AngularPlanning.TagHelpers.output.cache
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\AngularPlanning.RazorCoreGenerate.cache
-C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Event\Create.cshtml.g.cs
-C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Event\Delete.cshtml.g.cs
-C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Event\Details.cshtml.g.cs
-C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Event\Edit.cshtml.g.cs
-C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Event\Index.cshtml.g.cs
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\AngularPlanning.RazorTargetAssemblyInfo.cs
 C:\Users\Gabi\source\repos\AngularPlanning\AngularPlanning\obj\Debug\netcoreapp3.1\AngularPlanning.Views.pdb
