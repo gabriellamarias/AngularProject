@@ -13,22 +13,23 @@ export class EventPageComponent implements OnInit {
 
   selectedEvent = {} as Event;
   eventId: Number = 0;
+  successful = false;
+  linkToUpdate: string = '#';
 
 
   constructor(
     private route: ActivatedRoute,  
-    private router: Router,
     private eventAPIsvc: EventApiService
   ) { }
 
   ngOnInit(): void {
-    // console.log(this.route.snapshot.root);
-    // console.log(this.route.snapshot.url);
     const eventid = this.route.snapshot.paramMap.get('eventID');
     if (eventid) {
       this.eventId = parseInt(eventid);
   }
+  this.linkToUpdate = `updateevent/${this.eventId}`
   this.getSelectedEvent();
+  
 }
 
   getSelectedEvent() {
@@ -38,6 +39,16 @@ export class EventPageComponent implements OnInit {
       this.selectedEvent = openEvent;
     }
     )}
+
+  deleteSelectedEvent() {
+    console.log(this.eventId);
+    this.eventAPIsvc.deleteEvent(this.eventId).subscribe();
+    this.deleteSuccess();
+  }
+
+  deleteSuccess() {
+      this.successful = true;
+  }
   }
 
 

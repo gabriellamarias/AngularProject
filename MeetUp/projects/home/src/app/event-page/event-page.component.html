@@ -1,6 +1,15 @@
 <header class="container-sm" >
+    <div [hidden]="successful">
     <p>Event Selected: {{selectedEvent.eventName}}</p>
     <p>{{selectedEvent.eventDescription}}</p>
     <p>{{selectedEvent.eventDate}}</p>
+    <p>{{selectedEvent.eventPrice}}</p>
 
+    <button type="button" class="btn btn-outline-danger" (click)="deleteSelectedEvent()">Delete Event</button>
+    <a href= "{{ linkToUpdate }}" class="btn btn-outline-warning">Update Event</a>
+</div>
 </header>
+
+<div [hidden]="!successful">
+    <h2>Event Deleted</h2>
+</div>

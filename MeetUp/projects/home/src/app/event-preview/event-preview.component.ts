@@ -28,13 +28,13 @@ export class EventPreviewComponent implements OnInit {
     this.linkToEvent = `/event/${this.content.eventID}`
   }
 
-  // getSelectedEvent() {
-  //   this.eventAPIsvc.getEvent(this.content.eventID).subscribe((openEvent) => {
-  //     console.log("[INFO]")
-  //     console.log(openEvent)
-  //     this.outputEvent = openEvent;
-  //   }
-  //   )}
+  getSelectedEvent() {
+    this.eventAPIsvc.getEvent(this.content.eventID).subscribe((openEvent) => {
+      console.log("[INFO]")
+      console.log(openEvent)
+      this.outputEvent = openEvent;
+    }
+    )}
 }
 
 

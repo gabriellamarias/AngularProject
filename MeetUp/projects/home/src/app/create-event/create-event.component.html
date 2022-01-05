@@ -1,0 +1,104 @@
+<div class = "container">
+<div [hidden]="submitted">
+<h1>Add an Event</h1>
+<form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+<div class="form-group">
+  <label for="name">Event Name</label>
+  <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="model.eventName" name="name"
+         #name="ngModel">
+         <div [hidden]="name.valid || name.pristine"
+     class="alert alert-danger">
+  Event Name is required
+</div>
+</div>
+
+<div class="form-group">
+  <label for="alterEgo">Event Type</label>
+  <input type="text"  class="form-control" id="type"
+  required
+         [(ngModel)]="model.type" name="type"
+         #type="ngModel">
+         <div [hidden]="type.valid || type.pristine"
+     class="alert alert-danger">
+  Event Type is required
+</div>
+</div>
+
+<div class="form-group">
+    <label for="alterEgo">Event Description</label>
+    <input type="text"  class="form-control" id="eventDescription"
+           [(ngModel)]="model.eventDescription" name="eventDescription"
+           #description="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="alterEgo">Event Price</label>
+    <input type="text"  class="form-control" id="eventPrice"
+    required
+           [(ngModel)]="model.eventPrice" name="eventPrice"
+           #price="ngModel">
+           <div [hidden]="price.valid || price.pristine"
+     class="alert alert-danger">
+  Event Price is required
+</div>
+  </div>
+
+  <div class="form-group">
+    <label for="eventDate">Event Date: yyyy-mm-dd</label>
+    <input type="text"  class="form-control" id="eventDate"
+    required
+           [(ngModel)]="model.eventDate" name="eventDate"
+           #date="ngModel">
+           <div [hidden]="date.valid || date.pristine"
+     class="alert alert-danger">
+  Event Date is required
+</div>
+  </div>
+
+<div class="form-group">
+  <label for="power">Event Location</label>
+  <select class="form-control"  id="location"
+          required
+          [(ngModel)]="model.location" name="location">
+    <option *ngFor="let loc of locations" [value]="loc">{{loc}}</option>
+  </select>
+</div>
+
+<button type="submit" class="btn btn-outline-success" [disabled]="!eventForm.form.valid" >Submit</button>
+<button type="button" class="btn btn-outline-danger" (click)="newEvent(); eventForm.reset()">Clear Form</button>
+</form>
+</div>
+
+
+<div [hidden]="!submitted">
+    <h2>Your event was created!</h2>
+    <div class="row">
+      <div class="col-xs-3">Event Name:</div>
+      <div class="col-xs-9">{{ model.eventName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Event Type:</div>
+      <div class="col-xs-9">{{ model.type }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Event Date:</div>
+      <div class="col-xs-9">{{ model.eventDate }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Event Description:</div>
+        <div class="col-xs-9">{{ model.eventDescription }}</div>
+      </div>
+    <div class="row">
+      <div class="col-xs-3">Event Location:</div>
+      <div class="col-xs-9">{{ model.location }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Event Price:</div>
+      <div class="col-xs-9">${{ model.eventPrice }}</div>
+    </div>
+    <br>
+    <button class="btn btn-outline-info" (click)="submitted=false">Submit Another Event</button>
+  </div>
+
