@@ -16,5 +16,6 @@ namespace AngularPlanning.Data
 
         public DbSet<AngularPlanning.Models.Event> Event { get; set; }
         public DbSet<AngularPlanning.Models.Location> Location { get; set; }
+        public DbSet<AngularPlanning.Models.Favorite> Favorite { get; set; }
     }
 }

@@ -108,7 +108,6 @@ namespace AngularPlanning.Controllers
             var result = new OkObjectResult(selectEvent);
             return result;
         }
-
     }
-        
 }
+     
