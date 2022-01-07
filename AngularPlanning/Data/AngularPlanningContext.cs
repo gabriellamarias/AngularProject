@@ -16,7 +16,5 @@ namespace AngularPlanning.Data
 
         public DbSet<AngularPlanning.Models.Event> Event { get; set; }
         public DbSet<AngularPlanning.Models.Location> Location { get; set; }
-        public DbSet<AngularPlanning.Models.Type> Type { get; set; }
-        public DbSet<AngularPlanning.Models.Tracking> Tracking { get; set; }
     }
 }
