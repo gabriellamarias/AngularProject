@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&effect-anaglyph');
+@import url('https://fonts.googleapis.com/css?family=Changa+One&effect=anaglyph');
+
+.container-fluid{
+    font-family: Staatliches;
+    font-size: 70px;
+    color: black;
+    background-color: rgb(182, 128, 115);
+    
+}
+p.font-effect-anaglyph {
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    text-align: right;
+    letter-spacing: 3px;
+}
