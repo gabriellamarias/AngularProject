@@ -7,13 +7,3 @@ p.font-effect-anaglyph {
 .body {
     min-height: 100%
 }
-.cards {
-    position: fixed;
-    z-index: 1;
-}
-.bb {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    z-index: 0;
-}

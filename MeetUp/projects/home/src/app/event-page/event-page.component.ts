@@ -15,6 +15,7 @@ export class EventPageComponent implements OnInit {
   eventId: Number = 0;
   successful = false;
   linkToUpdate: string = '#';
+  locationString: String = '';
 
 
   constructor(
@@ -29,7 +30,6 @@ export class EventPageComponent implements OnInit {
   }
   this.linkToUpdate = `updateevent/${this.eventId}`
   this.getSelectedEvent();
-  
 }
 
   getSelectedEvent() {
@@ -37,6 +37,7 @@ export class EventPageComponent implements OnInit {
       console.log("[INFO]")
       console.log(openEvent)
       this.selectedEvent = openEvent;
+      this.setLocationString(this.selectedEvent.location)
     }
     )}
 
@@ -48,6 +49,38 @@ export class EventPageComponent implements OnInit {
 
   deleteSuccess() {
       this.successful = true;
+  }
+
+  setLocationString(location: Number): String{
+    if (location == 1)
+    {
+      this.locationString = 'Van Andel Arena'
+    }
+    else if (location == 2)
+    {
+      this.locationString = 'Ford Field'
+    }
+    else if (location == 3)
+    {
+      this.locationString = 'Detroit Institute of Arts'
+    }
+    else if (location == 4)
+    {
+      this.locationString = 'Fox Theatre'
+    }
+
+    else if (location == 5)
+    {
+      this.locationString = 'The Fillmore'
+    }
+    console.log("[INFO]")
+    console.log(this.locationString)
+    return this.locationString;
+  }
+
+  addFav() {
+    console.log(this.eventId);
+    this.eventAPIsvc.addFav(this.eventId).subscribe();
   }
   }
 

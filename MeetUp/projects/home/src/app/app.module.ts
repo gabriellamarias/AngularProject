@@ -11,6 +11,11 @@ import { EventPageComponent } from './event-page/event-page.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateEventComponent } from './update-event/update-event.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
+import { AllLocationListComponent } from './all-location-list/all-location-list.component';
+import { LocationPreviewComponent } from './location-preview/location-preview.component';
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 
 
 @NgModule({
@@ -20,7 +25,12 @@ import { UpdateEventComponent } from './update-event/update-event.component';
     EventPreviewComponent,
     EventPageComponent,
     CreateEventComponent,
-    UpdateEventComponent
+    UpdateEventComponent,
+    HomePageComponent,
+    UserPageComponent,
+    AllLocationListComponent,
+    LocationPreviewComponent,
+    FavoritesPageComponent
   ],
   imports: [
     BrowserModule,

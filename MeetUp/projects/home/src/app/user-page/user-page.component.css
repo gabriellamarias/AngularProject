@@ -1,0 +1,31 @@
+p.font-effect-anaglyph {
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.body {
+    min-height: 100%
+}
+
+.card {
+    width: 50%;
+    top: 50px;
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+a.font-effect-anaglyph {
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+}
