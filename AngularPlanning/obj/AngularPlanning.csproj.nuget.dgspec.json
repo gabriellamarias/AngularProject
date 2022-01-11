@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gabi\\source\\repos\\AngularProject\\AngularPlanning\\AngularPlanning.csproj": {}
+    "C:\\Users\\Gabi\\source\\repos\\AngularPlanning\\AngularPlanning\\AngularPlanning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gabi\\source\\repos\\AngularProject\\AngularPlanning\\AngularPlanning.csproj": {
+    "C:\\Users\\Gabi\\source\\repos\\AngularPlanning\\AngularPlanning\\AngularPlanning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gabi\\source\\repos\\AngularProject\\AngularPlanning\\AngularPlanning.csproj",
+        "projectUniqueName": "C:\\Users\\Gabi\\source\\repos\\AngularPlanning\\AngularPlanning\\AngularPlanning.csproj",
         "projectName": "AngularPlanning",
-        "projectPath": "C:\\Users\\Gabi\\source\\repos\\AngularProject\\AngularPlanning\\AngularPlanning.csproj",
+        "projectPath": "C:\\Users\\Gabi\\source\\repos\\AngularPlanning\\AngularPlanning\\AngularPlanning.csproj",
         "packagesPath": "C:\\Users\\Gabi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gabi\\source\\repos\\AngularProject\\AngularPlanning\\obj\\",
+        "outputPath": "C:\\Users\\Gabi\\source\\repos\\AngularPlanning\\AngularPlanning\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gabi\\AppData\\Roaming\\NuGet\\NuGet.Config",

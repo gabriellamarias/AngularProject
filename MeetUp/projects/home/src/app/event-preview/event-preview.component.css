@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+.card{
+    font-family: Staatliches;
+    min-height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-body{
+    background-color: rgb(250, 231, 227);
+    /* min-height: 200px; */
+    /* max-height: 200px; */
+}
+
+.card-title{
+    font-size: 26px;
+    color: rgb(81, 92, 86);
+}
+
+.card-subtitle{
+    font-size: 18px;
+    color: rgb(81, 92, 86);
+    
+}
+
+.card-text{
+    font-size: 14px;
+    font-family: Roboto Mono;
+    color: rgb(81, 92, 86);
+}

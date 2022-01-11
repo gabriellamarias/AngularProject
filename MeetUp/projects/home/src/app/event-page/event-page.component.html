@@ -1,15 +1,20 @@
-<header class="container-sm" >
-    <div [hidden]="successful">
-    <p>Event Selected: {{selectedEvent.eventName}}</p>
-    <p>{{selectedEvent.eventDescription}}</p>
-    <p>{{selectedEvent.eventDate}}</p>
-    <p>{{selectedEvent.eventPrice}}</p>
-
-    <button type="button" class="btn btn-outline-danger" (click)="deleteSelectedEvent()">Delete Event</button>
-    <a href= "{{ linkToUpdate }}" class="btn btn-outline-warning">Update Event</a>
-</div>
-</header>
+<html>
+    <body style="background-color:rgb(174, 195, 183);text-align:center">
+        <div [hidden]="successful" class="card text-center ; shadow p-3 mb-5 bg-white rounded" >
+            <p class="font-effect-anaglyph">{{selectedEvent.eventName}}</p>
+            <div class="card-body">
+              <p class="card-title">{{selectedEvent.eventDescription}}</p>
+              <p class="card-text">{{selectedEvent.type}}</p>
+              <p class="card-text">{{locationString}}</p>
+              <p class="card-text">${{selectedEvent.eventPrice}}</p>
+              <p class="card-text">{{selectedEvent.eventDate}}</p>
+              <button type="button" class="btn btn-outline-success" (click)="deleteSelectedEvent()">Delete Event</button>
+              <a href= "{{ linkToUpdate }}" class="btn btn-outline-success">Update Event</a>
+            </div>
+            <button type="button" class="btn btn-outline-success" (click)="addFav()">Add to Favs</button>
+        </div>
+        <img src="https://i.imgur.com/1aURUWk.png" class = "alienbb" alt="alienbb" width="200">
 
 <div [hidden]="!successful">
-    <h2>Event Deleted</h2>
+    <p class="font-effect-anaglyph">Event Deleted</p>
 </div>

@@ -1,15 +1,20 @@
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{content.eventName}}</h5>
-          <p class="card-text">{{content.eventDescription}}</p>
-          <a href= "{{ linkToEvent }}" class="btn btn-dark">Open Event</a>
-          <!-- <input type="button" value="Call Function" (click)="getSelectedEvent()"> -->
-          <p class="card-text"><small class="text-muted">{{content.eventID}}</small></p>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="col">
+  <div class="card ; shadow p-3 mb-5 bg-white rounded" style="width: 18rem">
+  <div class="card-body">
+    <p class="card-title">{{content.eventName}}</p>
+    <u><p class="card-text">{{content.type}}</p></u>
+    <p class="card-text">{{content.eventDescription}}</p>
+    <p class="card-text mb-2 text-muted">${{content.eventPrice}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{content.eventDate}}</p>
+    <a href= "{{ linkToEvent }}" class="card-link ; link-success">Open Event</a>
+  </div>
+  </div>
+  </div>
 </div>
+
+
+
+
 
 

@@ -1,0 +1,12 @@
+p.font-effect-anaglyph {
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    text-align: right;
+    letter-spacing: 3px;
+}
+.ufo {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
