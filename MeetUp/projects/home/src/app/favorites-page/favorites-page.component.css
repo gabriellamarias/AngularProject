@@ -1,5 +1,9 @@
+p.font-effect-anaglyph {
+    font-family: 'Staatliches', cursive;
+    font-size: 50px;
+    text-align: right;
+    letter-spacing: 3px;
+}
 .body {
-    min-height: 100%;
-    color: rgb(81, 92, 86);
-    
+    min-height: 100%
 }

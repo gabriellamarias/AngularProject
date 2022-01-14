@@ -13,31 +13,31 @@ export class EventApiService {
     ) { }
 
     getEvents(): Observable<Event[]> {
-        return this.httpClient.get<Event[]>("https://localhost:44321/api/event")
+        return this.httpClient.get<Event[]>("https://beamapi.azurewebsites.net/api/event")
     }
 
     getEvent(id?: Number): Observable<Event> {
-        return this.httpClient.get<Event>(`https://localhost:44321/api/event/details?id=${id}`)
+        return this.httpClient.get<Event>(`https://beamapi.azurewebsites.net/api/event/details?id=${id}`)
     }
 
     createEvent(event:Event): Observable<Event> {
-        return this.httpClient.post<Event>("https://localhost:44321/api/event/createevent", event)
+        return this.httpClient.post<Event>("https://beamapi.azurewebsites.net/api/event/createevent", event)
     }
 
     deleteEvent(id: Number): Observable<Event> {
-        return this.httpClient.delete<Event>(`https://localhost:44321/api/event/delete?id=${id}`)
+        return this.httpClient.delete<Event>(`https://beamapi.azurewebsites.net/api/event/delete?id=${id}`)
     }
 
     updateEvent(id: Number, event:Event): Observable<Event> {
-        return this.httpClient.patch<Event>(`https://localhost:44321/api/event/editevent?id=${id}`, event)
+        return this.httpClient.patch<Event>(`https://beamapi.azurewebsites.net/api/event/editevent?id=${id}`, event)
     }
 
     addFav(id: Number) {
-        return this.httpClient.post("https://localhost:44321/api/favorite/addfav", id)
+        return this.httpClient.post("https://beamapi.azurewebsites.net/api/favorite/addfav", id)
     }
 
     getFavs(): Observable<Event[]> {
-        return this.httpClient.get<Event[]>("https://localhost:44321/api/favorite/seefav")
+        return this.httpClient.get<Event[]>("https://beamapi.azurewebsites.net/api/favorite/seefav")
     }
 
 }
